@@ -1,5 +1,4 @@
 # tend-not-live-chat
-Looks like a live chat, smells like a live chat, is not live chat.
 
 Live chat is lovely isn't it? Until you have to staff it and be all responsive to potential customers. This plugin allows WordPress websites to look like they offer live chat, but in fact it is just a contact form. On mobile, it becomes a click-to-call button. Think Intercom but without being anything like Intercom.
 
