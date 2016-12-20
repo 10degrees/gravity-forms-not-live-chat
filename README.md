@@ -1,5 +1,5 @@
 # tend-not-live-chat
-Looks like a live chat, smells like a live chat, is not live chat. Why?  Because.
+Looks like a live chat, smells like a live chat, is not live chat. Why?  Because customers.
 
 Currently requires a Gravity Form.
 Media query is hard-coded.
