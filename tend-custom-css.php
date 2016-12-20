@@ -2,26 +2,25 @@
 
 /*
 Plugin Name: 10° Not Live chat
-Plugin URI: https://10degrees.uk
-Description: Looks like a live chat, smells like a live chat, is not live chat. Why?  Because.
-Author: Tom Kay (10 Degrees)
-Version: 1.0.0
-Author URI: https://10degrees.uk
+Plugin URI: https://www.10degrees.uk
+Description: Looks like a live chat, smells like a live chat, is not live chat.
+Author: Tom Kay, Matt Radford
+Version: 1.1.0
+Author URI: https://www.10degrees.uk
+Text Domain: nlc
 */
 
-
+// Add NLC Options page
 add_action('admin_menu', 'tend_not_live_chat');
 
 function tend_not_live_chat(){
-  add_options_page('Not Live Chat', 'Not Live Chat', 'manage_options', '10d-not-live-chat', 'tend_not_live_chat_page');
-
+  add_options_page( 'Not Live Chat', 'Not Live Chat', 'manage_options', '10d-not-live-chat', 'tend_not_live_chat_page') ;
   //call register settings function
 	add_action( 'admin_init', 'register_tend_nlc_settings' );
 }
 
-
+// Register NLC settings
 function register_tend_nlc_settings() {
-	//register our settings
 	register_setting( 'tend-nlc-settings-group', 'nlc_phonenumber' );
 	register_setting( 'tend-nlc-settings-group', 'nlc_email' );
 	register_setting( 'tend-nlc-settings-group', 'nlc_gformid' );
@@ -29,16 +28,16 @@ function register_tend_nlc_settings() {
   register_setting( 'tend-nlc-settings-group', 'nlc_message' );
 }
 
+
 function tend_not_live_chat_page() {
 
-  if (!current_user_can('manage_options'))  {
-    wp_die( __('You do not have permission to access this page.')    );
+  // Restrict to Administrator
+  if ( ! current_user_can( 'manage_options' ) )  {
+    wp_die( __( 'You do not have permission to access this page.' )    );
   }
 
-  // Start building the page
-
+  // Build the Options page
   echo '<div class="wrap">';
-
   echo '<h2>10° Not Live Chat</h2>';
 
   // Check whether the button has been pressed AND also check the nonce
@@ -53,9 +52,8 @@ function tend_not_live_chat_page() {
   settings_fields( 'tend-nlc-settings-group' );
   do_settings_sections( 'tend-nlc-settings-group' );
 
-  // this is a WordPress security feature - see: https://codex.wordpress.org/WordPress_Nonces
+  // This is a WordPress security feature - see: https://codex.wordpress.org/WordPress_Nonces
   wp_nonce_field('update_button_clicked');
-
 
   echo '<b>Contact Phone Number:</b><br /><input type="text" name="nlc_phonenumber" value="' . esc_attr( get_option('nlc_phonenumber') ) . '" /> <br />';
   echo '<b>Contact Email:</b><br /><input type="text" name="nlc_email" value="' . esc_attr( get_option('nlc_email') ) . '" /> <br />';
@@ -66,7 +64,6 @@ function tend_not_live_chat_page() {
   echo '<input type="hidden" value="true" name="nlc" />';
   submit_button('Update Settings');
   echo '</form>';
-
 
   echo '</div>';
 
