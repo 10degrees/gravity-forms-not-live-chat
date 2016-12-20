@@ -11,4 +11,5 @@ Basically, you'll probably need to do a bit of work.
 * Localization.
 * Media query an option
 * Don't require Gravity Forms - replace with a shortcode perhaps
-* Seperate out admin and front-end code
+* Separate out admin and front-end code
+* Proper plugin deactivation
