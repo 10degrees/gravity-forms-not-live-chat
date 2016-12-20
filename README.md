@@ -4,7 +4,6 @@ Looks like a live chat, smells like a live chat, is not live chat.
 * Currently requires a Gravity Form.
 * Media query is hard-coded.
 
-
 Basically, you'll probably need to do a bit of work.
 
 ## To do:
