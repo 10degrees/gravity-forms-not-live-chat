@@ -10,6 +10,11 @@ Author URI: https://www.10degrees.uk
 Text Domain: nlc
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // Add NLC Options page
 add_action('admin_menu', 'tend_not_live_chat');
 
