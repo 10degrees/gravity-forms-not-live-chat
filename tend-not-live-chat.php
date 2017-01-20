@@ -1,18 +1,36 @@
 <?php
-
 /*
 Plugin Name: 10° Not Live chat
 Plugin URI: https://www.10degrees.uk
 Description: Looks like a live chat, smells like a live chat, is not live chat.
-Author: Tom Kay, Matt Radford
 Version: 1.1.0
+Author: Tom Kay, Matt Radford
 Author URI: https://www.10degrees.uk
+License: MIT
 Text Domain: nlc
 */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
+}
+
+
+add_action( 'admin_init', 'child_plugin_has_parent_plugin' );
+function child_plugin_has_parent_plugin() {
+    if ( is_admin() && current_user_can( 'activate_plugins' ) &&  ! class_exists( 'GFForms' ) ) {
+        add_action( 'admin_notices', 'child_plugin_notice' );
+
+        deactivate_plugins( plugin_basename( __FILE__ ) ); 
+
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+    }
+}
+
+function child_plugin_notice(){
+    ?><div class="error"><p>Sorry, but 10° Not Live Chat requires <a href="http://www.gravityforms.com/">Gravity Forms</a> to be installed and active.</p></div><?php
 }
 
 // Add NLC Options page
