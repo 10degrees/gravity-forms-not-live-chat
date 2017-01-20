@@ -17,12 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   padding: 0 15px;
   margin-right: 5px;
   margin-bottom: 20px; }
+  .tend_nlc_chat_icon span {
+    color: white; }
   .tend_nlc_chat_icon svg {
-    fill: #fff;
+    fill: white;
     width: 20px;
     height: 20px;
     margin-left: 5px; }
@@ -36,7 +37,6 @@
 
 .tend_nlc_chat_banner {
   background: #bb272d;
-  color: #fff;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
   display: flex;
   align-items: center; }
   .tend_nlc_chat_close svg {
-    fill: #fff;
+    fill: white;
     width: 30px;
     height: 30px; }
 
@@ -74,7 +74,7 @@ p.tend_nlc_chat_content_inner_message {
     width: auto;
     height: 65px;
     border-radius: 20px;
-    color: #fff;
+    color: white;
     padding: 20px; }
     .tend_nlc_chat_icon svg {
       width: 30px;

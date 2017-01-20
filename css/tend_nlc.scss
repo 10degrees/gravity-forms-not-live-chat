@@ -1,4 +1,5 @@
-$primary:    #bb272d;
+$primary:           #bb272d;
+$icon_title_colour:   white;
 
 .tend_nlc_chat {
   position: fixed;
@@ -21,12 +22,14 @@ $primary:    #bb272d;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   padding: 0 15px;
   margin-right: 5px;
   margin-bottom: 20px;
+  span {
+    color: $icon_title_colour;
+  }
   svg {
-    fill: #fff;
+    fill:$icon_title_colour;
     width: 20px;
     height: 20px;
     margin-left: 5px;
@@ -43,7 +46,6 @@ $primary:    #bb272d;
 
 .tend_nlc_chat_banner {
   background: $primary;
-  color: #fff;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -61,7 +63,7 @@ $primary:    #bb272d;
   display: flex;
   align-items: center;
   svg {
-    fill: #fff;
+    fill: $icon_title_colour;
     width: 30px;
     height: 30px;
   }
@@ -91,7 +93,7 @@ p.tend_nlc_chat_content_inner_message {
     width: auto;
     height: 65px;
     border-radius: 20px;
-    color: #fff;
+    color: $icon_title_colour;
     padding: 20px;
     svg {
       width: 30px;
