@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
 
   }
 
-  // Hide modal on close icon click
+  // Hide modal if there's a click on the close icon
   $('.tend_nlc_chat_close').click(function () {
     $('.tend_nlc_chat_content').slideToggle("slow", function () {
       $('.tend_nlc_chat_icon').show();

@@ -174,21 +174,23 @@ function save_nlc_options() {
       </p>
       <hr />
       <?php } ?>
-      <?php if( get_option('nlc_phonenumber') ) { ?>
-      <p><strong>Telephone:</strong>
-        <a class="tend_nlc_chat_content_call" href="tel:<?php echo get_option('nlc_phonenumber'); ?>">
-          <?php echo get_option('nlc_phonenumber'); ?>
-        </a>
-      </p>
+      <?php if( get_option('nlc_phonenumber') || get_option('nlc_email') ) { ?>
+        <?php if( get_option('nlc_phonenumber') ) { ?>
+        <p><strong>Telephone:</strong>
+          <a class="tend_nlc_chat_content_call" href="tel:<?php echo get_option('nlc_phonenumber'); ?>">
+            <?php echo get_option('nlc_phonenumber'); ?>
+          </a>
+        </p>
+        <?php } ?>
+        <?php if( get_option('nlc_email') ) { ?>
+        <p><strong>Email:</strong>
+          <a href="mailto:<?php echo get_option('nlc_email'); ?>">
+            <?php echo get_option('nlc_email'); ?>
+          </a>
+        </p>
+        <?php } ?>
+        <hr />
       <?php } ?>
-      <?php if( get_option('nlc_email') ) { ?>
-      <p><strong>Email:</strong>
-        <a href="mailto:<?php echo get_option('nlc_email'); ?>">
-          <?php echo get_option('nlc_email'); ?>
-        </a>
-      </p>
-      <?php } ?>
-      <hr />
       <?php $formid = get_option('nlc_gformid'); ?>
       <?php echo do_shortcode('[gravityform id='.$formid.' title="false" description="false" ajax="true" tabindex="49"]'); ?>
     </div>
