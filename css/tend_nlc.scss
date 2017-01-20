@@ -1,4 +1,6 @@
-  .tend_nlc_chat {
+$primary:    #bb272d;
+
+.tend_nlc_chat {
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -11,7 +13,7 @@
 }
 
 .tend_nlc_chat_icon {
-  background: #0f206b;
+  background: $primary;
   width: auto;
   height: 40px;
   border-radius: 20px;
@@ -40,7 +42,7 @@
 }
 
 .tend_nlc_chat_banner {
-  background: #0f206b;
+  background: $primary;
   color: #fff;
   padding: 10px;
   display: flex;

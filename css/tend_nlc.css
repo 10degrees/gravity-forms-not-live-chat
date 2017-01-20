@@ -9,7 +9,7 @@
     overflow-y: scroll; }
 
 .tend_nlc_chat_icon {
-  background: #0f206b;
+  background: #bb272d;
   width: auto;
   height: 40px;
   border-radius: 20px;
@@ -35,7 +35,7 @@
   max-width: 400px; }
 
 .tend_nlc_chat_banner {
-  background: #0f206b;
+  background: #bb272d;
   color: #fff;
   padding: 10px;
   display: flex;
