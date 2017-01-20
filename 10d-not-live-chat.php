@@ -195,55 +195,21 @@ function save_nlc_options() {
 </div>
 
 <script>
-  jQuery(document).ready(function ($) {
 
-
-    if ($(window).width() < 480) {
-
-      $(".tend_nlc_chat").on('click', function () {
-        $('a.tend_nlc_chat_content_call')[0].click();
-      });
-
-    } else {
-
-      $('.tend_nlc_chat_icon').click(function () {
-
-        $(this).hide();
-
-        $('.tend_nlc_chat_content').slideToggle("slow", function () {
-
-        })
-
-        $(".tend_nlc_chat").addClass('open');
-
-      });
-
-    }
-
-    $('.tend_nlc_chat_close').click(function () {
-        $('.tend_nlc_chat_content').slideToggle("slow", function () {
-          $('.tend_nlc_chat_icon').show();
-        })
-      $(".tend_nlc_chat").removeClass('open');
-    });
-
-  });
 </script>
 <?php
    }
    add_action( 'wp_footer', 'tend_load_floaty_tab' , 200);
 
-  function tend_scripts() {
+  function tend_nlc_style() {
       wp_register_style( 'tend-nlc-styles',  plugin_dir_url( __FILE__ ) . 'css/tend_nlc.css' );
       wp_enqueue_style( 'tend-nlc-styles' );
   }
-  add_action( 'wp_enqueue_scripts', 'tend_scripts', 100 );
+  add_action( 'wp_enqueue_style', 'tend_nlc_style', 100 );
 
-  //  function tend_load_nlc_styles() {
-  //   $stylesheeruri = plugins_url( '10d-not-live-chat/css/tend_nlc.css', dirname(__FILE__) );
-   /*?>
+  function tend_nlc_script() {
+      wp_register_style( 'tend-nlc-script',  plugin_dir_url( __FILE__ ) . 'js/tend-nlc.min.js' );
+      wp_enqueue_style( 'tend-nlc-script' );
+  }
+  add_action( 'wp_enqueue_script', 'tend_nlc_script', 100 );
 
-<?php*/
-
-// }
-add_action( 'wp_footer', 'tend_load_nlc_styles' , 200);
