@@ -190,7 +190,7 @@ function save_nlc_options() {
       <?php } ?>
       <hr />
       <?php $formid = get_option('nlc_gformid'); ?>
-      <?php echo do_shortcode('[gravityform id='.$formid.' title=false description=false ajax=true tabindex=49]'); ?>
+      <?php echo do_shortcode('[gravityform id='.$formid.' title="false" description="false" ajax="true" tabindex="49"]'); ?>
     </div>
   </div>
 </div>

@@ -12,4 +12,3 @@ Basically, you may need to do a bit of work.
 * Media query an option
 * Don't require Gravity Forms - replace with a shortcode perhaps
 * Separate out admin and front-end code
-* Proper plugin deactivation
