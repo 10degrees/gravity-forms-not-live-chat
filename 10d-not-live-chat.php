@@ -209,3 +209,11 @@ function tend_nlc_script_and_style() {
     wp_enqueue_script( 'tend-nlc-script' );
 }
 add_action( 'wp_enqueue_scripts', 'tend_nlc_script_and_style', 100 );
+ 
+function tend_enqueue_gf(){
+    if ( !is_admin() ) {
+      gravity_form_enqueue_scripts( $formid, 'true' );
+    }
+    
+}
+add_action( 'wp_head', 'tend_enqueue_gf' );
