@@ -37,7 +37,7 @@ function tend_gravity_form_not_active_notice(){
 <?php
 }
 
-// Add NLC Options page
+// Register NLC Options page
 add_action('admin_menu', 'tend_not_live_chat');
 
 function tend_not_live_chat(){
@@ -56,7 +56,7 @@ function register_tend_nlc_settings() {
   register_setting( 'tend-nlc-settings-group', 'nlc_message_show' );
 }
 
-
+// Create NLC Options page
 function tend_not_live_chat_page() {
 
   // Restrict to Administrator
@@ -196,14 +196,14 @@ function save_nlc_options() {
 </div>
 
 <?php
-   }
-   add_action( 'wp_footer', 'tend_load_floaty_tab' , 200);
+}
+add_action( 'wp_footer', 'tend_load_floaty_tab' , 200);
 
-  function tend_nlc_script_and_style() {
-      wp_register_style( 'tend-nlc-styles',  plugin_dir_url( __FILE__ ) . 'css/tend_nlc.css' );
-      wp_register_script( 'tend-nlc-script',  plugin_dir_url( __FILE__ ) . 'js/tend-nlc.min.js', array( 'jquery' ) );
-      wp_enqueue_style( 'tend-nlc-styles' );
-      wp_enqueue_script( 'tend-nlc-script' );
-  }
-  add_action( 'wp_enqueue_scripts', 'tend_nlc_script_and_style', 100 );
-
+// Enqueue script and style for the modal
+function tend_nlc_script_and_style() {
+    wp_register_style( 'tend-nlc-styles',  plugin_dir_url( __FILE__ ) . 'css/tend_nlc.css' );
+    wp_register_script( 'tend-nlc-script',  plugin_dir_url( __FILE__ ) . 'js/tend-nlc.min.js', array( 'jquery' ) );
+    wp_enqueue_style( 'tend-nlc-styles' );
+    wp_enqueue_script( 'tend-nlc-script' );
+}
+add_action( 'wp_enqueue_scripts', 'tend_nlc_script_and_style', 100 );
