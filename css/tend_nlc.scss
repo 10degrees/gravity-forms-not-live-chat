@@ -3,13 +3,27 @@ $icon_title_colour:   white;
 
 .tend_nlc_chat {
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   right: 10px;
   z-index: 999;
   font-size: 15px;
   &.open {
     max-height: 90%;
     overflow-y: scroll;
+  }
+  .gform_wrapper {
+    ul.gform_fields {
+      list-style: none;
+      margin-left: 0;
+    }
+    .gfield {
+      margin-bottom: 10px;
+    }
+    .gform_footer {
+      .gform_button {
+        background-color: $primary;
+      }
+    }
   }
 }
 
@@ -46,7 +60,7 @@ $icon_title_colour:   white;
 
 .tend_nlc_chat_banner {
   background: $primary;
-  padding: 10px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
