@@ -26,10 +26,6 @@
   margin-bottom: 20px;
 }
 
-.tend_nlc_chat_icon::before {
-  content: "Call Us";
-}
-
 .tend_nlc_chat_icon svg {
   fill: #fff;
   width: 20px;
@@ -99,9 +95,6 @@ p.tend_nlc_chat_content_inner_message {
     border-radius: 20px;
     color: #fff;
     padding: 20px;
-  }
-  .tend_nlc_chat_icon::before {
-    content: "Contact Us";
   }
   .tend_nlc_chat_icon svg {
     width: 30px;
