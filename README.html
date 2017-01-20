@@ -4,24 +4,34 @@
 	<meta charset="utf-8"/>
 </head>
 <body>
-<h1 id="10°notlivechat">10° Not Live Chat</h1>
+<h1 id="gravityformsnotlivechat">Gravity Forms Not Live Chat</h1>
 
 <p>Live chat is lovely isn&#8217;t it? Until you have to staff it and be all responsive to potential customers. This plugin allows WordPress websites to look like they offer live chat, but in fact it is just a contact form. On mobile, it becomes a click-to-call button. Think Intercom but without being anything like Intercom.</p>
 
-<ul>
-<li>Currently requires a Gravity Form.</li>
-<li>Media query is hard-coded.</li>
-</ul>
+<blockquote>
+<h2 id="thiswordpresspluginrequiresgravityforms.">This WordPress plugin requires Gravity Forms.</h2>
+</blockquote>
 
-<p>Basically, you may need to do a bit of work.</p>
+<h2 id="installation">Installation</h2>
+
+<ol>
+<li>Download the zip file and install</li>
+<li>Adjust settings for the Not Live Chat plugin in Gravity Forms -&gt; Not Live Chat.</li>
+<li>Import the sample form, if required. <code>gravityforms-sample-form.json</code> can be found within the plugin&#8217;s main directory.</li>
+</ol>
+
+<p>If you want to change styling of the popup, you can either use the Customizer and target the <code>.tend_nlc_chat</code> class, or use the <code>tend_nlc.scss</code> file within the plugin.</p>
+
+<ul>
+<li>Please note the media query is hard-coded within <code>js/tend-nlc.js</code>.</li>
+</ul>
 
 <h2 id="todo:">To do:</h2>
 
 <ul>
-<li>Localization.</li>
-<li>Media query an option</li>
-<li>Don&#8217;t require Gravity Forms - replace with a shortcode perhaps</li>
-<li>Separate out admin and front-end code</li>
+<li>Localization</li>
+<li>Media query a user-definable option</li>
+<li>Serialize options</li>
 </ul>
 
 </body>

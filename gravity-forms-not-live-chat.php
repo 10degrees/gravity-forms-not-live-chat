@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: 10° Not Live Chat
+Plugin Name: Gravity Forms Not Live Chat
 Plugin URI: https://www.10degrees.uk
 Description: Looks like a live chat, smells like a live chat, is not live chat. Why? Because.
-Version: 1.2.0
+Version: 1.3.0
 Author: Tom Kay, Matt Radford
 Author URI: https://www.10degrees.uk
 License: MIT
 Text Domain: nlc
-GitHub Plugin URI: 10degreesuk/10d-not-live-chat
+GitHub Plugin URI: 10degreesuk/gravity-forms-not-live-chat
 */
 
 // If this file is called directly, abort.
@@ -27,23 +27,22 @@ function tend_gravity_forms_active() {
         if ( isset( $_GET['activate'] ) ) {
             unset( $_GET['activate'] );
         }
+    } else {
+        add_action( 'admin_init', 'register_tend_nlc_settings' );
     }
 }
 function tend_gravity_form_not_active_notice(){
     ?>
 <div class="error">
-  <p>Sorry, but 10° Not Live Chat requires <a href="http://www.gravityforms.com/">Gravity Forms</a> to be installed and active.</p>
+  <p>Sorry, but Gravity Forms Not Live Chat requires <a href="http://www.gravityforms.com/">Gravity Forms</a> to be installed and active.</p>
 </div>
 <?php
 }
 
-// Register NLC Options page
-add_action('admin_menu', 'tend_not_live_chat');
-
-function tend_not_live_chat(){
-  add_options_page( '10° Not Live Chat', '10° Not Live Chat', 'manage_options', '10d-not-live-chat', 'tend_not_live_chat_page') ;
-  //call register settings function
-	add_action( 'admin_init', 'register_tend_nlc_settings' );
+add_filter( 'gform_addon_navigation', 'tend_add_menu_item' );
+function tend_add_menu_item( $menu_items ) {
+    $menu_items[] = array( "name" => "not_live_char", "label" => "Not Live Chat", "callback" => "tend_not_live_chat_page", "permission" => "manage_options" );
+    return $menu_items;
 }
 
 // Register NLC settings
@@ -66,7 +65,7 @@ function tend_not_live_chat_page() {
 
   // Build the Options page
   echo '<div class="wrap">';
-  echo '<h1>10° Not Live Chat</h1>';
+  echo '<h1>Not Live Chat</h1>';
 
   // Check whether the button has been pressed AND also check the nonce
   if (isset($_POST['nlc']) && check_admin_referer('update_button_clicked')) {
