@@ -5,7 +5,7 @@ Live chat is lovely isn't it? Until you have to staff it and be all responsive t
 * Currently requires a Gravity Form.
 * Media query is hard-coded.
 
-Basically, you'll probably need to do a bit of work.
+Basically, you may need to do a bit of work.
 
 ## To do:
 * Localization.
