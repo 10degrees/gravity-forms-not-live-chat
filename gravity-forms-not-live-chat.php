@@ -108,17 +108,15 @@ function tend_not_live_chat_page() {
       <td>
         <input name="nlc_title" id="nlc_title" value="<?php echo esc_attr( get_option('nlc_title') ); ?>" class="regular-text"
           type="text">
-          <p class="description" id="tagline-description">Keep it short, e.g "Talk to Us".</p>
+          <p class="description" id="tagline-description">E.g "Talk to Us". Keep it short.</p>
       </td>
     </tr>
     <tr>
       <th scope="row"><label for="nlc_message">Message Text</label></th>
       <td>
-        <textarea name="nlc_message" id="nlc_message" value="<?php echo esc_attr( get_option('nlc_message') ); ?>" class="regular-text"
-          type="textarea">
-          <?php echo esc_attr( get_option('nlc_message') ); ?>
-          </textarea>
-          <p class="description" id="tagline-description">Leave blank for no message.</p>
+        <input name="nlc_message" id="nlc_message" value="<?php echo esc_attr( get_option('nlc_message') ); ?>" class="regular-text"
+          type="text">
+          <p class="description" id="tagline-description">E.g. "We're not available right now, so leave us a message", or leave this blank for no message.</p>
       </td>
     </tr>
   </tbody>
