@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms Not Live Chat
 Plugin URI: https://www.10degrees.uk
 Description: Looks like a live chat, smells like a live chat, is not live chat. Why? Because.
-Version: 1.3.0
+Version: 1.0.0
 Author: Tom Kay, Matt Radford
 Author URI: https://www.10degrees.uk
 License: MIT
