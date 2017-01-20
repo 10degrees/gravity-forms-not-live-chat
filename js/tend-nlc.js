@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-  // Make it a clcik-to-call
+  // Make it a click-to-call
   if ($(window).width() < 480) {
 
     $(".tend_nlc_chat").on('click', function () {
