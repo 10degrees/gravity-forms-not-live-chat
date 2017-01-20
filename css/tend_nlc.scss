@@ -10,6 +10,7 @@ $icon_title_colour:   white;
   &.open {
     max-height: 90%;
     overflow-y: scroll;
+    border: 1px solid $primary;
   }
   .gform_wrapper {
     ul.gform_fields {
