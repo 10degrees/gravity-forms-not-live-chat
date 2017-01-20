@@ -52,7 +52,7 @@ function register_tend_nlc_settings() {
 	register_setting( 'tend-nlc-settings-group', 'nlc_gformid' );
   register_setting( 'tend-nlc-settings-group', 'nlc_title' );
   register_setting( 'tend-nlc-settings-group', 'nlc_message' );
-  register_setting( 'tend-nlc-settings-group', 'nlc_click_to_call' );
+  register_setting( 'tend-nlc-settings-group', 'nlc_message_show' );
 }
 
 
@@ -118,13 +118,7 @@ function tend_not_live_chat_page() {
           type="textarea">
           <?php echo esc_attr( get_option('nlc_message') ); ?>
           </textarea>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row"><label for="nlc_click_to_call">Click-to-call on mobile?</label></th>
-      <td>
-        <input name="nlc_click_to_call" id="nlc_click_to_call" value="1" type="checkbox">
-        <p class="description" id="tagline-description">If ticked, this will change the form into a click-to-call button, at screen sizes below 480px.</p>
+          <p class="description" id="tagline-description">Leave blank for no message.</p>
       </td>
     </tr>
   </tbody>
@@ -143,18 +137,15 @@ function save_nlc_options() {
      $gform = $_POST["nlc_gformid"];
      $title = $_POST["nlc_title"];
      $message = $_POST["nlc_message"];
-     $click_to_call = $_POST["nlc_click_to_call"];
      update_option( 'nlc_phonenumber', $phone );
      update_option( 'nlc_email', $email );
      update_option( 'nlc_gformid', $gform );
      update_option( 'nlc_title', $title );
      update_option( 'nlc_message', $message );
-     update_option( 'nlc_click_to_call', $click_to_call );
    }
 
+// Output the form on the front end
    function tend_load_floaty_tab() {
-
-
      ?>
 <div class="tend_nlc_chat">
   <div class="tend_nlc_chat_icon">
@@ -202,6 +193,7 @@ function save_nlc_options() {
     </div>
   </div>
 </div>
+
 <script>
   jQuery(document).ready(function ($) {
 
