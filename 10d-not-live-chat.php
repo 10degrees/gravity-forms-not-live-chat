@@ -194,22 +194,15 @@ function save_nlc_options() {
   </div>
 </div>
 
-<script>
-
-</script>
 <?php
    }
    add_action( 'wp_footer', 'tend_load_floaty_tab' , 200);
 
-  function tend_nlc_style() {
+  function tend_nlc_script_and_style() {
       wp_register_style( 'tend-nlc-styles',  plugin_dir_url( __FILE__ ) . 'css/tend_nlc.css' );
+      wp_register_script( 'tend-nlc-script',  plugin_dir_url( __FILE__ ) . 'js/tend-nlc.min.js', array( 'jquery' ) );
       wp_enqueue_style( 'tend-nlc-styles' );
+      wp_enqueue_script( 'tend-nlc-script' );
   }
-  add_action( 'wp_enqueue_style', 'tend_nlc_style', 100 );
-
-  function tend_nlc_script() {
-      wp_register_style( 'tend-nlc-script',  plugin_dir_url( __FILE__ ) . 'js/tend-nlc.min.js' );
-      wp_enqueue_style( 'tend-nlc-script' );
-  }
-  add_action( 'wp_enqueue_script', 'tend_nlc_script', 100 );
+  add_action( 'wp_enqueue_scripts', 'tend_nlc_script_and_style', 100 );
 
