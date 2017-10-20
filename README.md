@@ -15,6 +15,6 @@ If you want to change styling of the popup, you can either use the Customizer an
 * Please note the media query is hard-coded within `js/tend-nlc.js`.
 
 ## To do:
-* Localization
+* Localisation
 * Media query a user-definable option
 * Serialize options
