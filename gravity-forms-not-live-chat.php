@@ -50,9 +50,9 @@ function register_tend_nlc_settings() {
 	register_setting( 'tend-nlc-settings-group', 'nlc_phonenumber' );
 	register_setting( 'tend-nlc-settings-group', 'nlc_email' );
 	register_setting( 'tend-nlc-settings-group', 'nlc_gformid' );
-  register_setting( 'tend-nlc-settings-group', 'nlc_title' );
-  register_setting( 'tend-nlc-settings-group', 'nlc_message' );
-  register_setting( 'tend-nlc-settings-group', 'nlc_message_show' );
+	register_setting( 'tend-nlc-settings-group', 'nlc_title' );
+	register_setting( 'tend-nlc-settings-group', 'nlc_message' );
+	register_setting( 'tend-nlc-settings-group', 'nlc_message_show' );
 }
 
 // Create NLC Options page
